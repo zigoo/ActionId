@@ -5,6 +5,8 @@
 
 
 .loader {
+  vertical-align: middle;
+  line-height: 50vh; 
   text-align: center;
   animation: spin 1s infinite;
 }

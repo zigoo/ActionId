@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { combineReducers } from 'redux'
 
 import App from './App';
 import SpecificWorker from './Components/SpecificWorker/Specificworker.js';
 
 import workers from './Helpers/workerReducer.js';
+import tools from './Helpers/toolsReducer.js';
 import { Provider }  from 'react-redux'; 
 import { createStore } from 'redux';
 
@@ -14,8 +16,10 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import './index.css';
 
 
-export const store = createStore(
+export const store = createStore(combineReducers({
   workers,
+  tools,
+}),
   composeWithDevTools()
 );
 

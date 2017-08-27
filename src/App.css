@@ -1,7 +1,8 @@
 .App {
+  font-size: 12px;
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr;
   grid-template-areas: 
   "workersList specificworker"
@@ -9,8 +10,6 @@
 
 .workersList {
   grid-area: workersList;
-  border: 1px red solid;
-  background-color: gray;
 }
 
 .specificworker {
@@ -20,13 +19,22 @@
   "workerDetails"
   "gitrepos"
 }
-.workerDetails {
-  border: 1px green solid;
-  background-color: cyan;
-}
+ 
 
 .gitrepos {
   grid-area: gitrepos;
-  background-color: lightgray;
-  color:red;
+}
+
+.button-small {
+  font-size: .8rem;
+  height: 2.8rem;
+  line-height: 2.8rem;
+  padding: 0 1.5rem;
+  margin-bottom: 0;
+  min-width: 65px;
+}
+
+
+th {
+  padding-top: 0px;
 }

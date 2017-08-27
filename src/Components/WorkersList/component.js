@@ -9,29 +9,25 @@ class WorkersList extends Component {
 	}
 	redirect(id) {
 		browserHistory.push(`/${id}`)
-
 	}
 	render() {
 		const {workers} = this.props;
 		return (
 			<div className="workersList">
-			  Workers <br/>
-			  <table>
-			    <tbody>
-				  <tr>
-				      <th>Id</th>
-				  	  <th>Imie i nazwisko</th>
-					  <th>Ilosć sprzetu</th>
-		 		  </tr>
-				  {Object.keys(workers).map(workerId => 
-				  <tr key={workerId} onClick={()=>this.redirect(workerId)}>
-              	       <td>{workers[workerId].id}</td>
-                       <td>{workers[workerId].name}</td>
-                       <td data-rel="id">{workers[workerId].tools.length}</td>
-                  </tr>
+			  <div className="wL_desc">  
+				 <h6>
+				   <span className="wL_sp-l">Imie i nazwisko</span>
+				   <span className="wL_sp-r">Ilość sprzetów</span>
+				 </h6>
+				 <ul>
+				   {Object.keys(workers).map(workerId => 
+				   <li key={workerId} onClick={()=>this.redirect(workerId)}>
+                     <span >{workers[workerId].name} </span>
+                     <span className="wL_desc-sp">{workers[workerId].tools.length}</span>
+                   </li>
 				)} 
-				  </tbody>
-				</table>
+                 </ul>	 
+               </div>
 			</div>
 		);
 	}

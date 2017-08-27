@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
     return {
-    	workers : state.workersList
+    	workers : state.workers.workersList
     }
 }
 

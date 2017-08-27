@@ -1,35 +1,86 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Roboto;
 }
 
+.gitrepos a {
+  text-decoration: none;
+  color: #005959;
+}
+
+
+.gitrepos a:hover {
+  color: darkgray;
+  cursor: pointer;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 10px;
+}
 
 .workersList {
-	text-align: left;
+  text-align: left;
+  margin-left:
 }
 
+.workersList li {
+  cursor: pointer;
+}
+
+.workersList li:hover {
+	background-color: lightgrey;
+}
+
+.wL_desc {
+	padding-top: 20px;
+}
+
+.workerDetails_desc ul,
 .workersList ul {
-	list-style: none;
-	cursor: pointer;
-	margin:0;
-	margin-top: 10px;
-	padding-left: 10px;
+  margin-top: 10%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
 }
 
-.workerDetails_desc {
-	margin-top: 10px;
+.workerDetails_desc li,
+.workersList li {
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 0;
+ 
 }
 
-table {
-	cursor: pointer;
+.wL_sp-l {
+  float: left;
 }
 
-th {
-    text-align: left;
+.wL_sp-r {
+  float: right;
 }
 
-table tr td[data-rel='id'] {
+.wL_desc-sp {
+	float: right;
 	text-align: center;
 }
 
+h6 {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1.3rem;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-weight: bold;
+}
+
+.workerDetails_desc {
+  margin-top: 10px;
+}
+
+.workerDetails_desc li {
+  float: left;
+  margin-bottom: 10px;
+}

@@ -14,7 +14,6 @@ class GitRepos extends Component {
 	   let {workerName, dispatch} = this.props;
 	   let reposList = [];
 
-
        if (nextProps.id !== this.props.id) {
            this.setState({
                isLoading: true,
@@ -46,18 +45,20 @@ class GitRepos extends Component {
 		const {repos, workerName} = this.props;
 		return (
 			<div className="gitrepos">
-				GitRepos <br/>
-				{workerName} <br/>
 				{this.state.isLoading
                  ? <Loader />
-				 : <table>
-	                   {Object.keys(repos).map(repo => 
-		               <tr>
-		                   <td> {repos[repo].name} </td>
-		                   <td><a href={repos[repo].url}> {repos[repo].url} </a></td>
-		               </tr>
+				 : <div>
+				   Repozytoria github dla {workerName} : <br/>
+
+				   <ul>
+	                   {Object.keys(repos).map((repo,i) => 
+		               <li key={i}>
+		                   {repos[repo].name} 
+		                <a href={repos[repo].url}> {repos[repo].url} </a>
+		               </li>
 	                   )}
-	               </table>
+	               </ul>
+	               </div>
 				}
 			</div>
 		);
