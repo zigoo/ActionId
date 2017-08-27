@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+
+.workersList {
+	text-align: left;
+}
+
+.workersList ul {
+	list-style: none;
+	cursor: pointer;
+	margin:0;
+	margin-top: 10px;
+	padding-left: 10px;
+}
+
+.workerDetails_desc {
+	margin-top: 10px;
+}
+
+table {
+	cursor: pointer;
+}
+
+th {
+    text-align: left;
+}
+
+table tr td[data-rel='id'] {
+	text-align: center;
+}
+
