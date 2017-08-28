@@ -17,11 +17,12 @@ class GitRepos extends Component {
 
        if (nextProps.id !== this.props.id) {
            this.setState({
-               isLoading: true,
+               isLoading: true
   		   });
 
 	       axios.get(`https://api.github.com/users/${workerName}/repos`)
 	            .then( repos => {
+	            	//eslint-disable-next-line 
 			        repos.data.map(repo => {
 		        	    reposList.push({
 		        	      name: repo.name,
@@ -37,6 +38,7 @@ class GitRepos extends Component {
 			        this.setState({
 	                    isLoading: false
 	  		        });
+	  		         return;
 	            })
 	            .catch((error) => console.log(error))    
        }
@@ -50,17 +52,21 @@ class GitRepos extends Component {
 				 {this.state.isLoading
 				  ? <Loader />
 				  : <div>
-				      Repozytoria github dla {workerName} : <br/>
-					  <ul>
-					    {Object.keys(repos).map((repo,i) => 
-					    <li key={i}>
-					    <span>
-					       <span className="wL_sp-l">{repos[repo].name}</span>
-					       <span className="wL_sp-r"><a href={repos[repo].url} target="_blank"> {repos[repo].url}</a></span>
-					    </span>
-					     </li>
+				      <p className="h100"> Repozytoria github dla <b>{workerName}</b></p>
+				      <table>
+				        <tbody>
+				          <tr>
+				            <th>nazwa repozytorium</th>
+				            <th><span className="wL_sp-r">link</span></th>
+				          </tr>
+				        {Object.keys(repos).map((repo,i) =>
+				          <tr key={i}>
+					        <td><span className="wL_sp-l">{repos[repo].name}</span></td>
+					        <td><span className="wL_sp-r"><a href={repos[repo].url} target="_blank"> {repos[repo].url}</a></span></td>
+				          </tr>		 
 					     )}
-					  </ul>
+					    </tbody>
+					  </table>
 				</div>}
 			  </div>
 			</div>

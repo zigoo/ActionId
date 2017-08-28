@@ -3,11 +3,9 @@
   to { opacity: 1; }
 }
 
-
 .loader {
   vertical-align: middle;
   text-align: center;
   color:black;
   animation: spin 1s infinite;
 }
-/*  line-height: 50vh; */

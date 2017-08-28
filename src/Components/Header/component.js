@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
 import './styles.css';
 
 export class Header extends Component {
 	static defaultProps = {
-      worker: { id: 1, name: 'Wybierz użytkownika z menu z lewej strony' }
+      worker: { id: 1, name: 'Wybierz użytkownika z menu po lewej stronie' }
     };
-    
+
 	render() {
 		const {worker} = this.props;
+		const params_id = this.props.id;
 		return (
 			<div className="header">
 			  <div className="hdr_span-l">
@@ -19,18 +18,14 @@ export class Header extends Component {
 				</h6>
 			  </div>
 			  <div className="hdr_span-r">
-			    <p>Szczegóły posiadanego sprzetu dla <b>{worker.name}</b> ID: <b>{worker.id}</b></p>			  
+			    {params_id !== undefined 
+			     ?<p>Szczegóły posiadanego sprzetu dla <b>{worker.name}</b> ID: <b>{worker.id}</b></p>
+			     :<p className="screamer">Wybierz użytkownika z menu z lewej strony</p>		  
+			    }
 			  </div>
 			</div>
 		);
 	}
 }
 
-function mapStateToProps(state,props) {
-	console.log(state.workers.workersList[props.id])
-	return {
-		worker: state.workers.workersList[props.id]
-	}
-}
-
-export default connect(mapStateToProps)(Header);
+export default Header;

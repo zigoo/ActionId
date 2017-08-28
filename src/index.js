@@ -11,7 +11,7 @@ import { Provider }  from 'react-redux';
 import { createStore } from 'redux';
 
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 
 import './index.css';
 
@@ -19,8 +19,7 @@ import './index.css';
 export const store = createStore(combineReducers({
   workers,
   tools,
-}),
-  composeWithDevTools()
+}), composeWithDevTools()
 );
 
 
@@ -33,4 +32,4 @@ ReactDOM.render(
     </Router>
   </Provider>, 
   document.getElementById('root'));
-       //<IndexRoute component={WorkersDetails}/>
+ 

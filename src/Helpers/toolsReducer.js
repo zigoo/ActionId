@@ -17,8 +17,6 @@ export default function tools (state = initialState , action) {
                [`${action.toolId}`]: {
                  id: action.toolId, 
                  type: action.text,
-                 // manufacturer: action.toolsA.manufacturer,
-                 // serialNum: action.toolsA.serialNum
                }
           }
       }

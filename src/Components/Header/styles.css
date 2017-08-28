@@ -1,11 +1,12 @@
 .header {
-  border-bottom: 1px lightgray solid;
-  max-height: 40px;
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr;
   grid-template-areas: 
-  "hdr_span-l hdr_span-r"
+  "hdr_span-l hdr_span-r";
+
+  border-bottom: 1px lightgray solid;
+  max-height: 40px;
 }
 
 .hdr_span-l {
@@ -16,4 +17,12 @@
 	grid-area: hdr_span-r;
 	text-align: center;
 }
- 
+
+.screamer {
+  animation: spin 1s infinite;
+}
+
+@keyframes spin {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

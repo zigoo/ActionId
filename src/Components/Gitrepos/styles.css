@@ -1,24 +1,43 @@
-.rep_desc{
-	border: 1px red solid;
-	width:70%;
-    margin: 0 auto;
+.rep_desc {
+	position: absolute;
+	top:35%;
+  left:28%;
+  width: 60%;
+  margin: 0 auto;
 }
 
-.gitrepos {
-
+.gitrepos p {
+  width:100;
+  margin: 0;
+  text-align: center;
 }
-
 .gitrepos a {
-  text-decoration: none;
   color: #005959;
+  text-decoration: none;
 }
-
 
 .gitrepos a:hover {
   color: darkgray;
   cursor: pointer;
 }
 
-.gitrepos li {
-	margin-bottom: 1px;
+
+.gitrepos td,
+.gitrepos th {
+   padding-top: 1px;
+   padding-bottom: 1px;
+   padding-right: 5px;
+}
+
+th,tr,td {
+  border:none;
+}
+
+tr {
+  margin-bottom: 2%;
+}
+
+.h100 {
+  width: 100%;
+  text-align: center;
 }

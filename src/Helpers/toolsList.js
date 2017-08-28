@@ -49,14 +49,14 @@ const toolsList = {
   },
   13560:{       
     id: 13560,
-    type: "monitor",
-    manufacturer: "acer",
+    type: "kopmuter",
+    manufacturer: "sony",
     serialNum: "c4a06dac382b6ec30dcf781a"
   },
   14957:{
     id: 14957,
-    type: "monitor",
-    manufacturer: "acer",
+    type: "mysz",
+    manufacturer: "sony",
     serialNum: "59a06dacd42a04af19280012"
   },
   11706:{
@@ -68,13 +68,13 @@ const toolsList = {
   11512:{
     id: 11512,
     type: "monitor",
-    manufacturer: "acer",
+    manufacturer: "sony",
     serialNum: "gf306dacee4bb4cd9266ce69"
   },
   11420:{
     id: 11420,
-    type: "monitor",
-    manufacturer: "acer",
+    type: "komputer",
+    manufacturer: "sony",
     serialNum: "zza06dac6a83371f830d906f"
   },
   14819:{
@@ -91,32 +91,32 @@ const toolsList = {
   },
   12066:{
     id: 12066,
-    type: "monitor",
-    manufacturer: "acer",
+    type: "mysz",
+    manufacturer: "logitech",
     serialNum: "59a06dac0281bf9775c97c1f"
   },
   12696:{
     id: 12696,
-    type: "monitor",
-    manufacturer: "acer", 
+    type: "mysz",
+    manufacturer: "logitech", 
     serialNum: "13sa06dac5b4dd9c23f7fd6e"
   },
   11990:{
     id: 11990,
-    type: "monitor",
+    type: "klawiatura",
     manufacturer: "sony",
     serialNum: "ds206dacd5d0c3360d24e440"
   },
   11852:{
     id: 11852,
     type: "monitor",
-    manufacturer: "acer",
+    manufacturer: "samsung",
     serialNum: "7656dac3bb7954ff7e435401"
   },
   13305:{
     id: 13305,
-    type: "monitor",
-    manufacturer: "acer",
+    type: "mysz",
+    manufacturer: "toshiba",
     serialNum: "as543dac47dce9411f6a4229"
   },
   12834:{

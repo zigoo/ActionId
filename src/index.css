@@ -1,7 +1,10 @@
+html,
 body {
   margin: 0;
   padding: 0;
   font-family: Roboto;
+  height: 100%;
+  overflow-y: hidden;
 }
 
 .wL_desc {
@@ -10,10 +13,9 @@ body {
 
 .workerDetails_desc ul,
 .workersList ul {
-  margin-top: 10%;
-  list-style-type: none;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
 .workerDetails_desc li,
@@ -56,4 +58,3 @@ p {
   padding-right: 5%;
   font-weight: normal;
 }
-

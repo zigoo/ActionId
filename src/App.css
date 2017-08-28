@@ -3,10 +3,11 @@
   
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr auto auto;
   grid-template-areas: 
   "header header"
   "workersList specificworker"
+  "workersList ."
 }
 
 .gitrepos {
@@ -18,18 +19,18 @@
 
 .workersList {
   grid-area: workersList;
+  border-right: 1px lightgray solid;
+  height: 99vh;
 }
 
 .specificworker {
   display: grid;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 30% 70%;
   grid-template-areas:
   "workerDetails"
   "gitrepos"
 }
-
-
-
+ 
 .button-small {
   font-size: .8rem;
   height: 2.8rem;
