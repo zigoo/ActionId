@@ -9,5 +9,6 @@ function mapStateToProps(state,props) {
     	tools: state.tools.toolsList,
     }
 }
-export default connect(mapStateToProps,
-	                    {changeTool,deleteTool})(WorkersDetails);
+export default 
+    connect(mapStateToProps,
+           {changeTool,deleteTool})(WorkersDetails);

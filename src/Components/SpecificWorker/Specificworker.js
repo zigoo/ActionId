@@ -7,15 +7,9 @@ import './styles.css'
 class SpecificWorker extends Component {
 	render() {
 		return (
-			  <div className="container">
-			   <div className="specificworker">
-			    
-				    <WorkersDetails id={this.props.params.id} />
-				 
-				    <Gitrepos id={this.props.params.id} />
-				 
-			 
-		      </div>
+		    <div className="specificworker">
+		      <WorkersDetails id={this.props.params.id} />
+			  <Gitrepos id={this.props.params.id} />
 			</div>
 		);
 	}

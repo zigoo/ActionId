@@ -34,7 +34,7 @@ class WorkersDetails extends Component {
 				      <th>Typ</th>
 				  	  <th>Producent</th>
 					  <th>Serial number</th>
-					  <th><button className="button-small">dodaj</button></th>
+					  <th><button className="button-small button-outline">dodaj</button></th>
 		 		  </tr>	
 	              {toolsIds.map((toolId, index) => {
 		           	return (

@@ -1,0 +1,24 @@
+.rep_desc{
+	border: 1px red solid;
+	width:70%;
+    margin: 0 auto;
+}
+
+.gitrepos {
+
+}
+
+.gitrepos a {
+  text-decoration: none;
+  color: #005959;
+}
+
+
+.gitrepos a:hover {
+  color: darkgray;
+  cursor: pointer;
+}
+
+.gitrepos li {
+	margin-bottom: 1px;
+}

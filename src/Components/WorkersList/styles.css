@@ -1,0 +1,7 @@
+.workersList {
+  text-align: left;
+}
+
+.workersList li:hover {
+  background-color: lightgrey;
+}

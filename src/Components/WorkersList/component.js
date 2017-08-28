@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 
+import './styles.css';
 
 class WorkersList extends Component {
 	constructor(props) {

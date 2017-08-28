@@ -1,6 +1,6 @@
 .App {
   font-size: 12px;
-  height: 100vh;
+  
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr auto;
@@ -39,7 +39,4 @@
   min-width: 65px;
 }
 
-.row {
-  max-height:40%;
-}
-
+ 
