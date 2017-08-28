@@ -104,7 +104,7 @@ const toolsList = {
   11990:{
     id: 11990,
     type: "monitor",
-    manufacturer: "acer",
+    manufacturer: "sony",
     serialNum: "ds206dacd5d0c3360d24e440"
   },
   11852:{

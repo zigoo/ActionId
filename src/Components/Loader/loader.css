@@ -6,7 +6,8 @@
 
 .loader {
   vertical-align: middle;
-  line-height: 50vh; 
   text-align: center;
+  color:black;
   animation: spin 1s infinite;
 }
+/*  line-height: 50vh; */

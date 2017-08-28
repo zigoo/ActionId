@@ -15,10 +15,6 @@ class WorkersList extends Component {
 		return (
 			<div className="workersList">
 			  <div className="wL_desc">  
-				 <h6>
-				   <span className="wL_sp-l">Imie i nazwisko</span>
-				   <span className="wL_sp-r">Ilość sprzetów</span>
-				 </h6>
 				 <ul>
 				   {Object.keys(workers).map(workerId => 
 				   <li key={workerId} onClick={()=>this.redirect(workerId)}>
@@ -34,5 +30,3 @@ class WorkersList extends Component {
 }
 
 export default WorkersList;
-
- 

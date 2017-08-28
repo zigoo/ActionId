@@ -15,26 +15,19 @@ body {
   cursor: pointer;
 }
 
-p {
-  text-align: center;
-  margin-bottom: 10px;
-}
 
 .workersList {
   text-align: left;
   margin-left:
 }
 
-.workersList li {
-  cursor: pointer;
-}
 
 .workersList li:hover {
 	background-color: lightgrey;
 }
 
 .wL_desc {
-	padding-top: 20px;
+	padding-top: 0px;
 }
 
 .workerDetails_desc ul,
@@ -51,7 +44,7 @@ p {
   padding-left: 5%;
   padding-right: 5%;
   margin-bottom: 0;
- 
+ cursor: pointer;
 }
 
 .wL_sp-l {
@@ -69,11 +62,26 @@ p {
 
 h6 {
   margin-top: 10px;
+  margin-bottom: 0px;
   padding-bottom: 10px;
   font-size: 1.3rem;
   padding-left: 5%;
   padding-right: 5%;
   font-weight: bold;
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 10px;
+  font-size: 1.3rem;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-weight: normal;
+}
+
+th {
+  padding-top: 0px;
 }
 
 .workerDetails_desc {

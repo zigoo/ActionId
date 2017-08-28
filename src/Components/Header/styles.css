@@ -1,0 +1,19 @@
+.header {
+  border-bottom: 1px lightgray solid;
+  max-height: 40px;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  "hdr_span-l hdr_span-r"
+}
+
+.hdr_span-l {
+	grid-area: hdr_span-l;
+}
+ 
+.hdr_span-r {
+	grid-area: hdr_span-r;
+	text-align: center;
+}
+ 

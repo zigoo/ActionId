@@ -1,0 +1,9 @@
+input {
+	margin:0;
+}
+
+.workerDetails td,
+.workerDetails th {
+   padding-top: 1px;
+   padding-bottom: 1px;
+}

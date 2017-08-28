@@ -1,29 +1,32 @@
 import React, { Component } from 'react';
 
+import './styles.css'
+
 class WorkersDetails extends Component {
 	constructor(){
 		super();
-		this.handleChange = this.handleChange.bind(this);
+		this.state = {
+			typeValue: []
+		}
 	}
-	handleChange(event,id,type) {
-		let {worker,dispatch} = this.props;
-		let newType = event.target.value;
-	    let workerId = worker.id;
-
-	    dispatch({
-	     	type: 'changeToolType',
-	     	workerId,
-	     	id,
-	     	newType //string
-	     })
+ 
+	handleTypeChange(event,id,toolId) {
+		let {changeTool} = this.props;
+		let text = event.target.value;
+ 
+	    changeTool({toolId,text});
+	}
    
-	}
+    handleSubmit(toolId) {
+    	const {worker, deleteTool} = this.props;
+		 
+		deleteTool({toolId,worker})
+    }
+
 	render() {
-		const {worker, tools, toolsIds} = this.props;
+		const {tools, toolsIds} = this.props;
 		return (
 			<div className="workerDetails">
-			  <p>Szczegóły posiadanego sprzetu dla <b>{worker.name}</b> ID: <b>{worker.id}</b>
-			  </p> 
 			  <div className="workerDetails_desc">
 		      <table>
 			    <tbody>
@@ -36,10 +39,10 @@ class WorkersDetails extends Component {
 	              {toolsIds.map((toolId, index) => {
 		           	return (
 		              <tr key={index}>
-		                  <td><input value={tools[toolId].type} onChange={ev => this.handleChange(ev,index,'type')} /></td>
-						  <td><input value={tools[toolId].manufacturer} onChange={ev => this.handleChange(ev,index,'manu')} /></td>
-						  <td><input value={tools[toolId].serialNum} onChange={ev => this.handleChange(ev,index,'serNum')} /></td>
-						  <td> <button className="button-small">usun</button></td>
+		                  <td><input value={tools[toolId].type} onChange={ev => this.handleTypeChange(ev,index,toolId)} /></td>
+						  <td><input value={tools[toolId].manufacturer} onChange={ev => this.handleManChange(ev,index)} /></td>
+						  <td><input value={tools[toolId].serialNum} onChange={ev => this.handleSerialChange(ev,index)} /></td>
+						  <td> <button type="submit" onClick={()=> this.handleSubmit(toolId) } className="button-small">usun</button></td>
 		              </tr> 
 		           	)
 				   })}
