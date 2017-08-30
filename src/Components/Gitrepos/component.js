@@ -52,7 +52,7 @@ class GitRepos extends Component {
 				 {this.state.isLoading
 				  ? <Loader />
 				  : <div>
-				      <p className="h100"> Repozytoria github dla <b>{workerName}</b></p>
+				      <p className="h100">Repozytoria github dla <b>{workerName}</b></p>
 				      <table>
 				        <tbody>
 				          <tr>
