@@ -49,25 +49,38 @@ class GitRepos extends Component {
 		return (
 			<div className="gitrepos">
 			   <div className="rep_desc">
-				 {this.state.isLoading
+				 {this.state.isLoading || repos.length===0
 				  ? <Loader />
 				  : <div>
-				      <p className="h100">Repozytoria github dla <b>{workerName}</b></p>
-				      <table>
-				        <tbody>
-				          <tr>
-				            <th>nazwa repozytorium</th>
-				            <th><span className="wL_sp-r">link</span></th>
-				          </tr>
-				        {Object.keys(repos).map((repo,i) =>
-				          <tr key={i}>
-					        <td><span className="wL_sp-l">{repos[repo].name}</span></td>
-					        <td><span className="wL_sp-r"><a href={repos[repo].url} target="_blank"> {repos[repo].url}</a></span></td>
-				          </tr>		 
-					     )}
-					    </tbody>
-					  </table>
-				</div>}
+				      <div className="row" >
+				        <div className="column">
+ 				          <p className="h100">Repozytoria github dla <b>{workerName}</b></p>
+   			            </div>
+				      </div>
+				      <div className="row">
+				        <div className="column">
+					      <p className="gr_rdsc-unl">nazwa repozytorium</p>
+				          <div className="user">
+				            <ul>
+				              {Object.keys(repos).map((repo,i) => 
+				                <li key={i}>{repos[repo].name}</li>
+					          )}
+					        </ul>
+					      </div>
+				        </div>
+					    <div className="column">
+   			              <p className="gr_rdsc-unl">link</p>
+				          <div className="url">
+				            <ul>
+						      {Object.keys(repos).map((repo,i) => 
+				                <li key={i}><a href={repos[repo].url} target="_blank"> {repos[repo].url}</a></li>
+					          )}
+						    </ul>
+				          </div>
+				        </div>
+				      </div>
+				    </div>
+         		}
 			  </div>
 			</div>
 		);

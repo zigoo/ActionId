@@ -1,3 +1,16 @@
 .specificworker {
+ display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30% 70%;
+  grid-template-areas: 
+  "workerDetails"
+  "gitrepos"
+}
 
+.gitrepos {
+	grid-area: gitrepos;
+}
+
+.workerDetails {
+	grid-area: workerDetails;
 }

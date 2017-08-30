@@ -1,6 +1,7 @@
 import toolsList from './toolsList.js'
 
-const changeToolType = 'changeToolType';
+const CHANGE_TOOL = 'changeToolType';
+const CHANGE_MANF = 'changeManufacturer';
 
 const initialState = {
   toolsList,
@@ -9,17 +10,24 @@ const initialState = {
 
 export default function tools (state = initialState , action) {
   switch (action.type) {
-    case changeToolType:
+    case CHANGE_TOOL:
       return {
-           ...state,
-           toolsList:{
-             ...toolsList,
-               [`${action.toolId}`]: {
-                 id: action.toolId, 
-                 type: action.text,
-               }
-          }
+        toolsList: {
+          ...state.toolsList,
+           [`${action.toolId}`]: { 
+             ...state.toolsList[`${action.toolId}`],
+            type: action.text }
+        }
       }
+    case CHANGE_MANF: 
+      return {
+        toolsList: {
+          ...state.toolsList,
+           [`${action.toolId}`]: { 
+             ...state.toolsList[`${action.toolId}`],
+            manufacturer: action.text }
+        }
+    }
     default: 
       return state;
     }

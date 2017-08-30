@@ -1,5 +1,5 @@
 import WorkersDetails from './component.js';
-import {changeTool, deleteTool} from '../../Helpers/actions.js';
+import {changeTool, deleteTool, changeMan} from '../../Helpers/actions.js';
 import { connect } from 'react-redux';
 
 function mapStateToProps(state,props) {
@@ -11,4 +11,4 @@ function mapStateToProps(state,props) {
 }
 export default 
     connect(mapStateToProps,
-           {changeTool,deleteTool})(WorkersDetails);
+           {changeTool,deleteTool,changeMan})(WorkersDetails);

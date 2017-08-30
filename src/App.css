@@ -1,13 +1,12 @@
 .App {
   font-size: 12px;
-  
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr auto auto;
   grid-template-areas: 
   "header header"
   "workersList specificworker"
-  "workersList ."
+  "workersList specificworker"
 }
 
 .gitrepos {
@@ -30,14 +29,4 @@
   "workerDetails"
   "gitrepos"
 }
- 
-.button-small {
-  font-size: .8rem;
-  height: 2.8rem;
-  line-height: 2.8rem;
-  padding: 0 1.5rem;
-  margin-bottom: 0;
-  min-width: 65px;
-}
-
  

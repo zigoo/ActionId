@@ -2,23 +2,23 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: Roboto;
   height: 100%;
-  overflow-y: hidden;
+  font-family: Roboto;
+  overflow: hidden;
 }
 
 .wL_desc {
   padding-top: 0px;
 }
 
-.workerDetails_desc ul,
+.workerDetails ul,
 .workersList ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-.workerDetails_desc li,
+.workerDetails li,
 .workersList li {
   padding-left: 5%;
   padding-right: 5%;
@@ -57,4 +57,13 @@ p {
   padding-left: 5%;
   padding-right: 5%;
   font-weight: normal;
+}
+
+.button-small {
+  font-size: .8rem;
+  height: 2.8rem;
+  line-height: 2.8rem;
+  padding: 0 1.5rem;
+  margin-bottom: 0;
+  min-width: 65px;
 }

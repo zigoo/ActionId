@@ -1,0 +1,19 @@
+.warning {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.warning p {
+  color: black;
+  animation: blink 2s infinite;
+  font-size: 24px;
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
