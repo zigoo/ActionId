@@ -13,6 +13,8 @@ class WorkersList extends Component {
 	}
 	render() {
 		const {workers} = this.props;
+		//console.log('___ ', workers[1].tools)
+		console.log('*** ', workers)
 		return (
 			<div className="workersList">
 			  <div className="wL_desc">  
@@ -20,7 +22,7 @@ class WorkersList extends Component {
 				   {Object.keys(workers).map(workerId => 
 				   <li key={workerId} onClick={()=>this.redirect(workerId)}>
                      <span >{workers[workerId].name} </span>
-                     <span className="wL_desc-sp">{workers[workerId].tools.length}</span>
+                     {/* <span className="wL_desc-sp">{workers[workerId].tools.length}</span> */}
                    </li>
 				)} 
                  </ul>	 
