@@ -18,10 +18,12 @@ class WorkersList extends Component {
 			  <div className="wL_desc">  
 				 <ul>
 				   {Object.keys(workers).map(workerId => 
-				   <li key={workerId} onClick={()=>this.redirect(workerId)}>
-                     <span >{workers[workerId].name} </span>
-                     <span className="wL_desc-sp">{workers[workerId].tools.length}</span> 
-                   </li>
+				   <li key={workerId} onClick={()=>this.redirect(workerId)}>			   	 
+                     <span>{workers[workerId].name}</span>
+                     <span className={"wL_desc-sp"+(workers[workerId].tools.length > 0 ? '' : ' quantity_alert') }>
+                       { workers[workerId].tools.length}
+                     </span> 
+                   </li>		   
 				)} 
                  </ul>	 
                </div>

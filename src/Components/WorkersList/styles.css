@@ -6,3 +6,7 @@
 .workersList li:hover {
   background-color: lightgrey;
 }
+
+.quantity_alert {
+	color:red;
+}
