@@ -24,10 +24,11 @@ export function changeMan({toolId,text}) {
   }
 }
 
-export function addTool({toolId,worker}) {
+export function addTool({typ,manuf,serialNum}) {
   return {
     type: 'add_tool',
-    toolId,
-    worker
+    typ,
+    manuf,
+    serialNum
   }
 }

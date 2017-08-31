@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css'; 
 
+
 export class Warning extends Component {
 	render() {
 		return (
