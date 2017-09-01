@@ -24,11 +24,15 @@ export function changeMan({toolId,text}) {
   }
 }
 
-export function addTool({typ,manuf,serialNum}) {
+export function addTool({worker,newType,newManufacturer,newSerialNumber}) {
+  let newToolId = Math.ceil(Math.random() * 1517);
+  
   return {
     type: 'add_tool',
-    typ,
-    manuf,
-    serialNum
+    worker,
+    newType,
+    newManufacturer,
+    newSerialNumber,
+    newToolId
   }
 }

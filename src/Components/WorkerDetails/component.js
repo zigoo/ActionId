@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import {debounce} from 'throttle-debounce';
 import Warning from '../Warning/Warning.js';
+import {debounce} from 'throttle-debounce';
 import {focusInCurrentTarget} from '../../Helpers/helpers.js';
-
 import './styles.css'
 
 class WorkersDetails extends Component {
-	_timeoutID;
-
 	constructor(){
 		super();
 		this.handleAddTool = this.handleAddTool.bind(this)
@@ -17,7 +13,6 @@ class WorkersDetails extends Component {
 			newType: '',
 			newManufacturer:'',
 			newSerialNumber: '',
-			isManagingFocus: false
 		}
 	}
 
@@ -53,12 +48,18 @@ class WorkersDetails extends Component {
     	this.setState({newSerialNumber: e.target.value})
     }
 
-    handleAddTool({type,manuf,serialNum}) {
-        this.setState({addFormVisible: !this.state.addFormVisible})
+    handleAddTool() {
+    	const {newType, newManufacturer, newSerialNumber} = this.state;
+    	const {worker, addTool} = this.props;
+    	 
+    	addTool({worker,
+    		     newType, 
+    		     newManufacturer, 
+    	         newSerialNumber})
     }
 
-    handleDispatchNewTool () {
-        
+    handleAddFormVisibility() {
+        this.setState({addFormVisible: true}) 
     }
 
     hide(e) {
@@ -66,11 +67,10 @@ class WorkersDetails extends Component {
     	  this.setState({addFormVisible: false})
     	}
     }
+
+ 
 	render() {
 		const {tools, toolsIds} = this.props;
-		const newType = this.state.newType;
-		const newManufacturer = this.state.newManufacturer;
-		const newSerialNumber = this.state.newSerialNumber;
 		return (
 			<div className="workerDetails">
 			  {toolsIds.length !== 0 
@@ -82,7 +82,7 @@ class WorkersDetails extends Component {
 					  <th>Numer seryjny</th>
 					  <th>
 					       <button className="button-small button-outline" 
-					              onClick={this.handleAddTool}>
+					              onClick={()=> this.handleAddFormVisibility()}>
 					                  dodaj
 					      </button>
 					  </th>
@@ -113,7 +113,6 @@ class WorkersDetails extends Component {
 			          <td><input value={this.state.newType}
 			                     onChange={e => this.handleNewType(e)}
 			                     ref="niuType"
-			                     //{(input) => { this.newTypeInput = input; }}  
 			                     placeholder="typ" /></td>
 
 			          <td><input value={this.state.newManufacturer}
@@ -125,11 +124,8 @@ class WorkersDetails extends Component {
 			                     className="wrk_dt-sn" 
 			                     placeholder="numer seryjny"/></td>
 			          <td>
-			              <button type="submit" className="button-small button-outline" 
-				                    onClick={this.handleDispatchNewTool({
-				                    	       newType,
-				                    	       newManufacturer,
-				                    	       newSerialNumber}) }>
+			              <button className="button-small button-outline" 
+				                  onClick={()=> this.handleAddTool()}>
 				            dodaj
 				          </button>
 				       </td>
@@ -137,7 +133,9 @@ class WorkersDetails extends Component {
 			        }
 	              </tbody>
 			    </table>
-			  : <Warning />
+			  : <div> 
+			      <Warning/>
+			    </div>
 			  }
 		    </div>
 		);
