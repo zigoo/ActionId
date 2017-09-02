@@ -52,6 +52,7 @@ class WorkersDetails extends Component {
     	const {newType, newManufacturer, newSerialNumber} = this.state;
     	const {worker, addTool} = this.props;
     	 
+    	this.setState({addFormVisible: false})
     	addTool({worker,
     		     newType, 
     		     newManufacturer, 
@@ -66,6 +67,31 @@ class WorkersDetails extends Component {
         if (!focusInCurrentTarget(e)) {
     	  this.setState({addFormVisible: false})
     	}
+    }
+ 
+    addNewForm() {
+    	return (
+		<tr onBlur={(e)=> this.hide(e)}>
+          <td><input value={this.state.newType}
+                     onChange={e => this.handleNewType(e)}
+                     placeholder="typ?" autoFocus/></td>
+
+          <td><input value={this.state.newManufacturer}
+                     onChange={e => this.handleNewManu(e)}
+                     placeholder="producent?" /></td>
+
+          <td><input value={this.state.newSerialNumber}
+                     onChange={e => this.handleSerial(e)}
+                     className="wrk_dt-sn" 
+                     placeholder="numer seryjny?"/></td>
+          <td>
+              <button className="button-small button-outline" 
+	                  onClick={()=> this.handleAddTool()}>
+	            dodaj
+	          </button>
+	      </td>
+        </tr>
+    	)
     }
 
  
@@ -109,32 +135,17 @@ class WorkersDetails extends Component {
 	                </tr> 
 		          )})}
 			      {this.state.addFormVisible &&
-				  	<tr onBlur={(e)=> this.hide(e)}>
-			          <td><input value={this.state.newType}
-			                     onChange={e => this.handleNewType(e)}
-			                     ref="niuType"
-			                     placeholder="typ" /></td>
-
-			          <td><input value={this.state.newManufacturer}
-			                     onChange={e => this.handleNewManu(e)}
-			                     placeholder="producent" /></td>
-
-			          <td><input value={this.state.newSerialNumber}
-			                     onChange={e => this.handleSerial(e)}
-			                     className="wrk_dt-sn" 
-			                     placeholder="numer seryjny"/></td>
-			          <td>
-			              <button className="button-small button-outline" 
-				                  onClick={()=> this.handleAddTool()}>
-				            dodaj
-				          </button>
-				       </td>
-			         </tr>
-			        }
+			        	this.addNewForm()
+			      }
 	              </tbody>
 			    </table>
 			  : <div> 
 			      <Warning/>
+			        <table>
+			          <tbody>
+ 			  	        {this.addNewForm()}
+ 			  	      </tbody>
+			       </table>
 			    </div>
 			  }
 		    </div>
